@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Top() {
     return (
         <TopStyle>
-            <img src="./src/assets/logo.png" alt="logo" />
+            <img src="../src/assets/logo.png" alt="logo" />
             <NameLogo>
                 <h1>ZapRecall</h1>
             </NameLogo>
