@@ -23,7 +23,7 @@ export default function Question() {
                     <span>Pergunta 4</span>
                     <ion-icon name="play-outline"></ion-icon>
                 </BoxQuestions>
-                
+
                 <BoxQuestions>
                     <span>Pergunta 5</span>
                     <ion-icon name="play-outline"></ion-icon>

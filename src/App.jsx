@@ -1,18 +1,16 @@
-import Footer from "./Footer";
-import Questions from "./Questions";
-import Top from "./Top";
+import Footer from "./components/Footer";
+import Questions from "./components/Questions";
+import Top from "./components/Top";
 import styled from "styled-components"
 
 export default function App() {
 
   return (
-    <>
-    <Container>
-      <Top />
-      <Questions />
-      <Footer />
-    </Container>
-    </>
+      <Container>
+        <Top />
+        <Questions />
+        <Footer />
+      </Container>
   )
 }
 

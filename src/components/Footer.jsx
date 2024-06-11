@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Footer() {
     return (
         <FooterStyle>
-            <span>0/4 CONCLUÍDOS</span>
+            <span>0/8 CONCLUÍDOS</span>
         </FooterStyle>
     )
 }
