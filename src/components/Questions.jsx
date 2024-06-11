@@ -2,10 +2,10 @@ import Question from "./Question";
 import styled from "styled-components"
 
 
-export default function Questions() {
+export default function Questions({question, answer}) {
     return (
         <BoxQuestion>
-            <Question />
+            <Question question={question} answer={answer}/>
         </BoxQuestion>
     )
 }
