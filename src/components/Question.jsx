@@ -1,46 +1,13 @@
+import React from 'react';
 import styled from "styled-components"
 
-export default function Question() {
+export default function Question(element) {
+    console.log(element)
     return (
         <>
             <ul>
                 <BoxQuestions>
-                    <span>Pergunta 1</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 2</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 3</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 4</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 5</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 6</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 7</span>
-                    <ion-icon name="play-outline"></ion-icon>
-                </BoxQuestions>
-
-                <BoxQuestions>
-                    <span>Pergunta 8</span>
+                    <span>{element.element.question}</span>
                     <ion-icon name="play-outline"></ion-icon>
                 </BoxQuestions>
             </ul>

@@ -1,14 +1,17 @@
+import React from 'react';
 import Footer from "./components/Footer";
 import Questions from "./components/Questions";
 import Top from "./components/Top";
 import styled from "styled-components"
 
-export default function QuestionFilter({question, answer}) {
+export default function QuestionFilter(props) {
 
+    // console.log(props)
+    
     return (
         <Container>
           <Top />
-          <Questions question={question} answer={answer}/>
+          <Questions props={props.card}/>
           <Footer />
         </Container>
     )

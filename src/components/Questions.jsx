@@ -1,11 +1,17 @@
+import React from 'react';
 import Question from "./Question";
 import styled from "styled-components"
 
 
-export default function Questions({question, answer}) {
+export default function Questions(props) {
+
+    console.log(props)
+
     return (
         <BoxQuestion>
-            <Question question={question} answer={answer}/>
+            {props.props.map(element => {
+                return <Question element={element}/>
+            })}
         </BoxQuestion>
     )
 }
