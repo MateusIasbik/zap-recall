@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import logo from "./assets/logo.png";
 
 export default function Top() {
     return (
         <TopStyle>
-            <img src="../src/assets/logo.png" alt="logo" />
+            <img src={logo} alt="logo" />
             <NameLogo>
                 <h1>ZapRecall</h1>
             </NameLogo>
