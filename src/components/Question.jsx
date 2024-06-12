@@ -27,7 +27,7 @@ export default function Question({ card, index }) {
                 }
             </span>
 
-            {showAnswer <= 5 && (
+            {(showAnswer === 0 || showAnswer === 1 || showAnswer === 3 || showAnswer === 4 || showAnswer === 5) && (
                 <img
                     src={
                         showAnswer === 0 ? play :
@@ -94,4 +94,3 @@ const BoxQuestions = styled.li`
         margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "10px" : "")};
     }
 `
-
