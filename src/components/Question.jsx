@@ -26,15 +26,27 @@ export default function Question({ card, index }) {
                 <img
                     src={
                         showAnswer === 0 ? play :
-                            showAnswer === 1 && virar     
+                            showAnswer === 1 && virar
                     }
 
-                    alt={showAnswer > 0 ? "virar" : "play"}
+                    alt={
+                        showAnswer === 0 ? "play" :
+                            showAnswer === 1 && "virar"
+                    }
+
                     onClick={AnswerCard}
                 />
             )}
 
-        </BoxQuestions>
+            {showAnswer > 1 && (
+                <BoxResult>
+                    <Wrong>Não Lembrei</Wrong>
+                    <Almost>Quase não lembrei</Almost>
+                    <Right>Zap!</Right>
+                </BoxResult>
+            )}
+
+        </BoxQuestions >
     )
 }
 
@@ -53,6 +65,7 @@ const BoxQuestions = styled.li`
 
     span {
         margin-right: 10px;
+        line-height: 22px;
         height: ${({ $showAnswer }) => ($showAnswer ? "90%" : "100%")};
         font-family: "Recursive", sans-serif;
         font-weight: 700;
@@ -71,8 +84,45 @@ const BoxQuestions = styled.li`
     }
 `
 
-const boxResult = styled.div`
-    position: fixed;
-    width: 85px;
+const BoxResult = styled.li`
+    font-family: "Recursive", sans-serif;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 300px;
     height: 37px;
+    margin-bottom: 10px;
+`
+
+const Wrong = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    background-color: #FF3030;
+    border-radius: 5px;
+    text-align: center;
+`
+
+const Almost = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    background-color: #FF922E;
+    border-radius: 5px;
+    text-align: center;
+`
+
+const Right = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    background-color: #2FBE34;
+    border-radius: 5px;
+    text-align: center;
 `
