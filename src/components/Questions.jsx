@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Question from "./Question";
 import styled from "styled-components"
 
 
-export default function Questions({cards}) {
+export default function Questions({ cards }) {
+
     return (
         <BoxQuestion>
             {cards.map((card, index) => {
-                return <Question key={index} card={card}/>
+                return (
+                    <Question
+                        key={index}
+                        card={card}
+                    />
+                )
             })}
         </BoxQuestion>
     )
