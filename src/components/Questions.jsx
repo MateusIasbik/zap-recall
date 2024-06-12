@@ -12,6 +12,7 @@ export default function Questions({ cards }) {
                     <Question
                         key={index}
                         card={card}
+                        index={index}
                     />
                 )
             })}
