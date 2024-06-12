@@ -3,14 +3,11 @@ import Question from "./Question";
 import styled from "styled-components"
 
 
-export default function Questions(props) {
-
-    console.log(props)
-
+export default function Questions({cards}) {
     return (
         <BoxQuestion>
-            {props.props.map(element => {
-                return <Question element={element}/>
+            {cards.map((card, index) => {
+                return <Question key={index} card={card}/>
             })}
         </BoxQuestion>
     )

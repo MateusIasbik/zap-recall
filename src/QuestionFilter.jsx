@@ -4,14 +4,11 @@ import Questions from "./components/Questions";
 import Top from "./components/Top";
 import styled from "styled-components"
 
-export default function QuestionFilter(props) {
-
-    // console.log(props)
-    
+export default function QuestionFilter({cards}) {
     return (
         <Container>
           <Top />
-          <Questions props={props.card}/>
+          <Questions cards={cards}/>
           <Footer />
         </Container>
     )

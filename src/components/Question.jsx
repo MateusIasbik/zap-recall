@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from "styled-components"
 
-export default function Question(element) {
-    console.log(element)
+export default function Question({card}) {
+
+
+    
     return (
         <>
             <ul>
                 <BoxQuestions>
-                    <span>{element.element.question}</span>
+                    <span>{card.question}</span>
                     <ion-icon name="play-outline"></ion-icon>
                 </BoxQuestions>
             </ul>
@@ -17,7 +19,6 @@ export default function Question(element) {
 
 const BoxQuestions = styled.li`
     background-color: #FFF;
-    color: #333333;
     width: 300px;
     height: 65px;
     margin-bottom: 25px;
@@ -27,9 +28,14 @@ const BoxQuestions = styled.li`
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
-    font-family: "Recursive", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
+
+    span {
+        margin-right: 10px;
+        font-family: "Recursive", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #333333;
+    }
 
     ion-icon {
         font-weight: 700;
