@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from "./components/Footer";
-import Questions from "./components/Questions";
-import Top from "./components/Top";
+import Footer from "./Footer";
+import Questions from "./Questions";
+import Top from "./Top";
 import styled from "styled-components"
 
 export default function QuestionFilter({cards, counter, setCounter}) {

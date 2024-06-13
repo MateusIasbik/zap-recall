@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import QuestionFilter from "./QuestionFilter";
 import CARDS from "./questionsList"
+import QuestionFilter from './components/QuestionFilter';
 
 export default function App() {
 
