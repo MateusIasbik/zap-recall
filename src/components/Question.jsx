@@ -28,23 +28,25 @@ export default function Question({ card, index }) {
             </span>
 
             {(showAnswer === 0 || showAnswer === 1 || showAnswer === 3 || showAnswer === 4 || showAnswer === 5) && (
-                <img
+                <StyledImg
                     src={
                         showAnswer === 0 ? play :
                             showAnswer === 1 ? virar :
                                 showAnswer === 3 ? erro :
                                     showAnswer === 4 ? quase :
                                         showAnswer === 5 ? certo :
-                                            undefined 
+                                            undefined
                     }
 
                     alt={
                         showAnswer === 0 ? "play" :
                             showAnswer === 1 ? "virar" :
-                                undefined 
+                                undefined
                     }
 
                     onClick={AnswerCard}
+
+                    disabled={showAnswer >= 3}
                 />
             )}
 
@@ -76,21 +78,22 @@ const BoxQuestions = styled.li`
         font-family: "Recursive", sans-serif;
         font-weight: 700;
         font-size: 16px;
-        color: ${({ $showAnswer }) => 
-                ($showAnswer === 3) ? "#FF3030" : 
-                ($showAnswer === 4) ? "#FF922E" : 
+        color: ${({ $showAnswer }) =>
+        ($showAnswer === 3) ? "#FF3030" :
+            ($showAnswer === 4) ? "#FF922E" :
                 ($showAnswer === 5) ? "#2FBE34" :
-                "#333333"}; 
+                    "#333333"}; 
         display: flex;
         text-decoration: ${({ $showAnswer }) => (($showAnswer === 3 || $showAnswer === 4 || $showAnswer === 5) ? "line-through" : "")};
         align-items: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "" : "center")};
     }
+    `
 
-    img {
-        width: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "23px" : "23px")};
-        height: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "20px" : "23px")};
-        display: flex;
-        align-items: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "start" : "center")};
-        margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "10px" : "")};
-    }
+const StyledImg = styled.img`
+    width: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "23px" : "23px")};
+    height: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "20px" : "23px")};
+    display: flex;
+    align-items: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "start" : "center")};
+    margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "10px" : "")};
+    pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
 `
