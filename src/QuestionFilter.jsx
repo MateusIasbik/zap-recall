@@ -4,12 +4,12 @@ import Questions from "./components/Questions";
 import Top from "./components/Top";
 import styled from "styled-components"
 
-export default function QuestionFilter({cards}) {
+export default function QuestionFilter({cards, counter, setCounter}) {
     return (
         <Container>
           <Top />
-          <Questions cards={cards}/>
-          <Footer />
+          <Questions cards={cards} counter={counter} setCounter={setCounter}/>
+          <Footer counter={counter} setCounter={setCounter}/>
         </Container>
     )
   }

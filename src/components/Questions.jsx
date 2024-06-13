@@ -3,7 +3,7 @@ import Question from "./Question";
 import styled from "styled-components"
 
 
-export default function Questions({ cards }) {
+export default function Questions({ cards, counter, setCounter }) {
 
     return (
         <BoxQuestion>
@@ -13,6 +13,8 @@ export default function Questions({ cards }) {
                         key={index}
                         card={card}
                         index={index}
+                        counter={counter} 
+                        setCounter={setCounter}
                     />
                 )
             })}

@@ -7,7 +7,7 @@ import certo from "../assets/icone_certo.png"
 import quase from "../assets/icone_quase.png"
 import Buttons from './Buttons';
 
-export default function Question({ card, index }) {
+export default function Question({ card, index, counter, setCounter }) {
 
     const [showAnswer, setShowAnswer] = useState(0);
 
@@ -51,7 +51,7 @@ export default function Question({ card, index }) {
             )}
 
             {showAnswer === 2 && (
-                <Buttons showAnswer={showAnswer} setShowAnswer={setShowAnswer} />
+                <Buttons showAnswer={showAnswer} setShowAnswer={setShowAnswer} counter={counter} setCounter={setCounter}/>
             )}
 
         </BoxQuestions >

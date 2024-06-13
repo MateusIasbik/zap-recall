@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from "styled-components"
 
-export default function Footer() {
+export default function Footer({counter, setCounter}) {
+
+    
+
     return (
         <FooterStyle>
-            <span>0/8 CONCLUÍDOS</span>
+            <span>{counter}/8 CONCLUÍDOS</span>
         </FooterStyle>
     )
 }

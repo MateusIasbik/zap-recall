@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import styled from "styled-components"
 
 
-export default function Buttons({setShowAnswer}) {
+export default function Buttons({ setShowAnswer, counter, setCounter }) {
 
     return (
         <BoxResult>
-            <Wrong onClick={() => setShowAnswer(3)}>Não Lembrei</Wrong>
+            <Wrong onClick={() => {setShowAnswer(3); setCounter(counter + 1)}}>Não Lembrei</Wrong>
 
 
-            <Almost onClick={() => setShowAnswer(4)}>Quase não lembrei</Almost>
+            <Almost onClick={() => {setShowAnswer(4); setCounter(counter + 1)}}>Quase não lembrei</Almost>
 
-            
-            <Right onClick={() => setShowAnswer(5)}>Zap!</Right>
+
+            <Right onClick={() => {setShowAnswer(5); setCounter(counter + 1)}}>Zap!</Right>
         </BoxResult>
     )
 }
