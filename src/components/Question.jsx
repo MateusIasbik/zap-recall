@@ -28,7 +28,7 @@ export default function Question({ card, index, counter, setCounter }) {
             </span>
 
             {(showAnswer === 0 || showAnswer === 1 || showAnswer === 3 || showAnswer === 4 || showAnswer === 5) && (
-                <StyledImg
+                <StyledImg $showAnswer={showAnswer}
                     src={
                         showAnswer === 0 ? play :
                             showAnswer === 1 ? virar :
@@ -90,10 +90,10 @@ const BoxQuestions = styled.li`
     `
 
 const StyledImg = styled.img`
-    width: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "23px" : "23px")};
+    width: 23px;
     height: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "20px" : "23px")};
     display: flex;
     align-items: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "start" : "center")};
-    margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "10px" : "")};
+    margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1) ? "10px" : $showAnswer === 2 && "20px")};
     pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
 `
