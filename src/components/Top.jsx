@@ -3,10 +3,15 @@ import styled from "styled-components"
 import logo from "../assets/logo.png";
 
 export default function Top() {
+
+    function resetPage() {
+        window.location.reload();
+    }    
+
     return (
         <TopStyle>
-            <img src={logo} alt="logo" />
-            <NameLogo>ZapRecall</NameLogo>
+            <img src={logo} alt="logo" onClick={resetPage} />
+            <NameLogo onClick={resetPage}>ZapRecall</NameLogo>
         </TopStyle>
     )
 }

@@ -23,7 +23,8 @@ export default function Question({ card, index, counter, setCounter }) {
                     showAnswer === 0 ? `Pergunta ${index + 1}` :
                         showAnswer === 1 ? card.question :
                             showAnswer === 2 ? card.answer :
-                                showAnswer >= 3 && (`Pergunta ${index + 1}`)
+                                showAnswer >= 3 ? (`Pergunta ${index + 1}`) :
+                                    undefined
                 }
             </span>
 
@@ -34,12 +35,14 @@ export default function Question({ card, index, counter, setCounter }) {
                             showAnswer === 1 ? virar :
                                 showAnswer === 3 ? erro :
                                     showAnswer === 4 ? quase :
-                                        showAnswer === 5 && certo
+                                        showAnswer === 5 ? certo :
+                                            undefined
                     }
 
                     alt={
                         showAnswer === 0 ? "play" :
-                            showAnswer === 1 && "virar"
+                            showAnswer === 1 ? "virar" :
+                                undefined
                     }
 
                     onClick={AnswerCard}
@@ -48,9 +51,9 @@ export default function Question({ card, index, counter, setCounter }) {
                 />
             )}
 
-            {showAnswer === 2 && (
+            {showAnswer === 2 ? (
                 <Buttons showAnswer={showAnswer} setShowAnswer={setShowAnswer} counter={counter} setCounter={setCounter} />
-            )}
+            ) : undefined}
 
         </BoxQuestions >
     )
@@ -92,6 +95,6 @@ const StyledImg = styled.img`
     height: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "20px" : "23px")};
     display: flex;
     align-items: ${({ $showAnswer }) => (($showAnswer === 1 || $showAnswer === 2) ? "start" : "center")};
-    margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1) ? "10px" : $showAnswer === 2 && "20px")};
+    margin-bottom: ${({ $showAnswer }) => (($showAnswer === 1) ? "10px" : $showAnswer === 2 ? "20px" : "0px")};
     pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
 `
