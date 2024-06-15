@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Question from "./Question";
+import React from 'react'
+import Question from "./Question"
 import styled from "styled-components"
 
 
@@ -13,7 +13,7 @@ export default function Questions({ cards, counter, setCounter }) {
                         key={index}
                         card={card}
                         index={index}
-                        counter={counter} 
+                        counter={counter}
                         setCounter={setCounter}
                     />
                 )

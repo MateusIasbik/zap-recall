@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import styled from "styled-components"
+import React, { useState } from 'react'
+import Buttons from './Buttons'
 import play from "../assets/seta_play.png"
 import virar from "../assets/seta_virar.png"
 import erro from "../assets/icone_erro.png"
 import certo from "../assets/icone_certo.png"
 import quase from "../assets/icone_quase.png"
-import Buttons from './Buttons';
+import styled from "styled-components"
 
 export default function Question({ card, index, counter, setCounter }) {
 
@@ -34,14 +34,12 @@ export default function Question({ card, index, counter, setCounter }) {
                             showAnswer === 1 ? virar :
                                 showAnswer === 3 ? erro :
                                     showAnswer === 4 ? quase :
-                                        showAnswer === 5 ? certo :
-                                            undefined
+                                        showAnswer === 5 && certo
                     }
 
                     alt={
                         showAnswer === 0 ? "play" :
-                            showAnswer === 1 ? "virar" :
-                                undefined
+                            showAnswer === 1 && "virar"
                     }
 
                     onClick={AnswerCard}
@@ -51,7 +49,7 @@ export default function Question({ card, index, counter, setCounter }) {
             )}
 
             {showAnswer === 2 && (
-                <Buttons showAnswer={showAnswer} setShowAnswer={setShowAnswer} counter={counter} setCounter={setCounter}/>
+                <Buttons showAnswer={showAnswer} setShowAnswer={setShowAnswer} counter={counter} setCounter={setCounter} />
             )}
 
         </BoxQuestions >

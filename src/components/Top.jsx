@@ -6,9 +6,7 @@ export default function Top() {
     return (
         <TopStyle>
             <img src={logo} alt="logo" />
-            <NameLogo>
-                <h1>ZapRecall</h1>
-            </NameLogo>
+            <NameLogo>ZapRecall</NameLogo>
         </TopStyle>
     )
 }
@@ -28,7 +26,7 @@ const TopStyle = styled.div`
         height: 60px;
     }
 `
-const NameLogo = styled.div`
+const NameLogo = styled.h1`
     display: flex;
     width: 100%;
     justify-content: center;
